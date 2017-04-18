@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import YTSearch from 'youtube-api-search'
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 const API_KEY = 'AIzaSyC1OhMfjQ0-i5dWT829dcF_gd4ZKoStlZI';
 
@@ -30,6 +31,7 @@ class App extends Component {
           Search Videos
         </p>
           <SearchBar/>
+          <VideoList videos={this.state.videos} />
       </div>
     );
   }
