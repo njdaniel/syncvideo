@@ -19,7 +19,11 @@ class App extends Component {
             selectedVideo: null
         };
 
-        YTSearch({key: API_KEY, term: 'stellaris'}, (videos) => {
+        this.videoSearch('stellaris');
+    }
+
+    videoSearch(term) {
+        YTSearch({key: API_KEY, term: term}, (videos) => {
             this.setState({
                 videos: videos,
                 selectedVideo: videos[0]
@@ -29,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+
           <div className="App">
             <div className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
@@ -38,7 +42,7 @@ class App extends Component {
             <p className="App-intro">
               Search Videos
             </p>
-              <SearchBar/>
+              <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
               <div>
                   <VideoDetail video={this.state.selectedVideo}/>
                   <VideoList
@@ -46,8 +50,6 @@ class App extends Component {
                       videos={this.state.videos} />
               </div>
           </div>
-
-      </div>
     );
   }
 }
