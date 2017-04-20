@@ -29,19 +29,24 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to VideoSync</h2>
-        </div>
-        <p className="App-intro">
-          Search Videos
-        </p>
-          <SearchBar/>
-          <VideoDetail video={this.state.selectedVideo}/>
-          <VideoList
-              onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-              videos={this.state.videos} />
+      <div>
+          <div className="App">
+            <div className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h2>Welcome to VideoSync</h2>
+            </div>
+            <p className="App-intro">
+              Search Videos
+            </p>
+              <SearchBar/>
+              <div>
+                  <VideoDetail video={this.state.selectedVideo}/>
+                  <VideoList
+                      onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                      videos={this.state.videos} />
+              </div>
+          </div>
+
       </div>
     );
   }

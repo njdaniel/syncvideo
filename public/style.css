@@ -5,11 +5,16 @@
 }
 
 .search-bar input {
-    width: 75%
+    width: 66%
 }
 
 .video-item img {
     max-width: 64px;
+}
+
+.video-detail {
+    float: left;
+    width: auto;
 }
 
 .video-detail .details {
@@ -25,4 +30,12 @@
 
 .list-group-item:hover {
     background-color: #eee;
+}
+
+.list-group {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    /*margin-top: 5px;*/
+    padding: 5px;
 }
